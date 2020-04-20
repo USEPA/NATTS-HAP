@@ -1,0 +1,47 @@
+AQS_PARAMETER_NAME,URE,ChemClass
+"1,1,2-Trichloroethane",1.60E-05,VOC
+"1,1-Dichloroethane",1.60E-06,VOC
+"1,3-Butadiene",3.00E-05,VOC
+"1,3-Dichloropropene(Total)",4.00E-06,VOC
+"1,4-Dioxane",5.00E-06,VOC
+9H-Fluorene (total tsp & vapor),4.80E-05,PAH
+Acenaphthene (total tsp & vapor),4.80E-05,PAH
+Acenaphthylene (total tsp & vapor),4.80E-05,PAH
+Acetaldehyde,2.20E-06,Carbonyl
+Acrylonitrile,6.80E-05,VOC
+alpha-Chlorotoluene,4.90E-05,VOC
+Arsenic Pm10 Lc,4.30E-03,PM
+Benzene,7.80E-06,VOC
+Benzo(a)anthracene (total tsp & vapor),9.60E-05,PAH
+Benzo(a)pyrene (total tsp & vapor),9.60E-04,PAH
+Benzo[B]Fluoranthene,9.60E-05,PAH
+Benzo[E]Pyrene(Tsp),4.80E-05,PAH
+"Benzo[G,H,I]Perylene",4.80E-05,PAH
+Benzo[K]Fluoranthene,9.60E-06,PAH
+Beryllium Pm10 Lc,2.40E-03,PM
+Cadmium Pm10 Lc,1.80E-03,PM
+Carbon tetrachloride,6.00E-06,VOC
+Chromium VI (LC),1.20E-02,PM
+Chrysene (total tsp & vapor),9.60E-07,PAH
+"Cis-1,3-Dichloropropylene",4.00E-06,VOC
+Coronene,4.80E-05,PAH
+"Dibenzo[A,H]Anthracene",9.60E-04,PAH
+Ethylbenzene,2.50E-06,VOC
+Ethylene dichloride,2.60E-05,VOC
+Fluoranthene (total tsp & vapor),4.80E-05,PAH
+Formaldehyde,1.30E-05,Carbonyl
+"Hexachloro-1,3-butadiene",2.20E-05,VOC
+"Indeno[1,2,3-Cd]Pyrene",9.60E-05,PAH
+Methyl tert-butyl ether,2.60E-07,VOC
+Methylene chloride,1.60E-08,VOC
+Naphthalene (total tsp & vapor),3.40E-05,PAH
+Nickel Pm10 Lc,4.80E-04,PM
+p-Dichlorobenzene,1.10E-05,VOC
+Perylene (total tsp & vapor),4.80E-05,PAH
+Tetrachloroethylene,2.60E-07,VOC
+"Trans-1,3-Dichloropropylene",4.00E-06,VOC
+Tribromomethane,1.10E-06,VOC
+Trichloroethylene,4.80E-06,VOC
+Vinyl Bromide,3.20E-05,VOC
+Vinyl chloride,8.80E-06,VOC
+"2-Chloro-1,3-butadiene",4.80E-04,VOC

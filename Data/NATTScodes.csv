@@ -1,0 +1,31 @@
+CITY_FINAL,STATE_ABBR,State Code,County Code,Site Num,SETTING,LOCATION,AMA_SITE_CODE
+Atlanta,GA,13,89,2,Urban,"Atlanta, GA",130890002
+Bountiful,UT,49,11,4,Urban,"Bountiful, UT",490110004
+Bronx,NY,36,5,110,Urban,"Bronx, NY",360050110
+Chesterfield,SC,45,25,1,Rural,"Chesterfield, SC",450250001
+Chicago,IL,17,31,4201,Urban,"Chicago, IL",170314201
+Detroit,MI,26,163,33,Urban,"Detroit, MI",261630033
+Grand Junction,CO,8,77,17,Urban,"Grand Junction, CO",80770017
+Grand Junction,CO,8,77,18,Urban,"Grand Junction, CO",80770018
+Grayson Lake,KY,21,43,500,Rural,"Grayson Lake, KY",210430500
+Horicon,WI,55,27,1,Rural,"Horicon, WI",550270001
+Houston,TX,48,201,1039,Urban,"Houston, TX",482011039
+Karnack,TX,48,203,2,Rural,"Karnack, TX",482030002
+La Grande,OR,41,61,119,Rural,"La Grande, OR",410610119
+Los Angeles,CA,6,37,1103,Urban,"Los Angeles, CA",60371103
+Phoenix,AZ,4,13,9997,Urban,"Phoenix, AZ",40139997
+Pinellas County,FL,12,103,26,Urban,"Pinellas County, FL",121030026
+Portland,OR,41,51,246,Urban,"Portland, OR",410510246
+Portland,OR,41,51,2010,Urban,"Portland, OR",410512010
+Providence,RI,44,7,22,Urban,"Providence, RI",440070022
+Richmond,VA,51,87,14,Urban,"Richmond, VA",510870014
+Rochester,NY,36,55,1007,Urban,"Rochester, NY",360551007
+Roxbury,MA,25,25,42,Urban,"Roxbury, MA",250250042
+Rubidoux,CA,6,65,8001,Urban,"Rubidoux, CA",60658001
+San Jose,CA,6,85,5,Urban,"San Jose, CA",60850005
+Seattle,WA,53,33,80,Urban,"Seattle, WA",530330080
+St. Louis,MO,29,510,85,Urban,"St. Louis, MO",295100085
+Tampa,FL,12,57,3002,Urban,"Tampa, FL",120573002
+Underhill,VT,50,7,7,Rural,"Underhill, VT",500070007
+Washington,DC,11,1,43,Urban,"Washington, DC",110010043
+La Grande,OR,41,61,123,Rural,"La Grande, OR",410610123

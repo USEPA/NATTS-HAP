@@ -7,11 +7,11 @@ library(dplyr); library(ggplot2); library(tidyverse); library(ggpubr); library(p
 ##  shows which chemicals have increased/decreased at each site, and their ##
 ##  statistical significance. The printed table is not pretty and needs    ##
 ##  to be edited with illustrator, however the results can be printed as   ##
-##  a dataframe and matched to paper figure.                                ##
+##  a dataframe and matched to paper figure.                               ##
 #############################################################################
 
-## Read in necessary file, filtered NATTS data
-df <- read.csv("../Data/filteredNATTS2017v3.csv")   # Change path if necessary
+## Read in necessary file, filtered NATTS HAP data
+df <- read.csv("../Data/FilteredNattsHaps.csv")   # Change path if necessary
 
 ## Keep only chemicals that had been measured for at least two years for each site
 data <- df %>% group_by(LOCATION, AQS_PARAMETER_NAME) %>% dplyr::filter(n() >= 2)
@@ -60,5 +60,5 @@ p <-  ggplot(df2, aes(x = interaction(AQS_PARAMETER_NAME, ChemClass), y = intera
 
 ## Save to pdf
 pdf("../Figures/Fig5_spearmanFig.pdf",  paper = "USr", width = 11, height = 7)  
-p
+print(p)
 dev.off()

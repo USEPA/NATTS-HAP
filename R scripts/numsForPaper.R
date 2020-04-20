@@ -1,22 +1,27 @@
 library(dplyr)
-setwd("L:/PRIV/NCEA_NAAQS_Database/TTF/HAP Data/2_11_2020")
 
-df <- read.csv("../Data/filteredNATTS2017v3.csv")
+################################################################
+#  This R script creates some of the numbers that were used in #
+#  the paper such as 5 year average cancer risk and ranges of  #
+#  percent contribution to cancer risk from chemical groups    #
+################################################################
+
+df <- read.csv("../Data/FilteredNattsHaps.csv")
 
 #### Five year average cancer risk by NATTS
-avgCR <- df %>% group_by(LOCATION, AQS_PARAMETER_NAME) %>% summarize("mean" = mean(CRinAmil))
-avgCR <- avgCR %>% group_by(LOCATION) %>% summarize("mean" = sum(mean))
+avgCR <- df %>% group_by(LOCATION, AQS_PARAMETER_NAME) %>% dplyr::summarize("mean" = mean(CRinAmil))
+avgCR <- avgCR %>% group_by(LOCATION) %>% dplyr::summarize("mean" = sum(mean))
 
 
 #### Average percent contribution to cancer risk from chem groups (carbonyl, PAH, PM, VOC)
 group_class <- df %>% group_by(LOCATION, ChemClass, AQS_PARAMETER_NAME, SETTING) %>% 
-  summarize("CRinAmil" = mean(CRinAmil),
+  dplyr::summarize("CRinAmil" = mean(CRinAmil),
             "numCheminGroup" = length(ChemClass))
 grp5yravg <- group_class %>% group_by(LOCATION, ChemClass, SETTING) %>%
-  summarize("CR5YrAvg" = sum(CRinAmil),
+  dplyr::summarize("CR5YrAvg" = sum(CRinAmil),
             "numYears" = length(ChemClass))
 group_site <- grp5yravg %>% group_by(LOCATION, SETTING) %>%
-  summarize("totalCRinAmil" = sum(CR5YrAvg))
+  dplyr::summarize("totalCRinAmil" = sum(CR5YrAvg))
 merged <- merge(grp5yravg, group_site, by = c("LOCATION", "SETTING"), all.x = TRUE)
 merged$pcentGroupCR <- merged$CR5YrAvg/merged$totalCRinAmil
 merged <- merge(merged, avgCR, by = "LOCATION")

@@ -1,40 +1,41 @@
 library(dplyr); library(ggplot2)
 
-########################################################################
-##  This script takes the filtered NATTS df and creates a stacked     ##
-##  bar plot of CR vs site, with the top 10 contributing pollutants   ##
-##  to CR (based on 5 yr average) distinguished by color in bar plot  ##
-########################################################################
+#########################################################################
+##  This script takes the filtered NATTS HAPs df and creates a stacked ##
+##  bar plot of CR in-a-million vs NATTS location, with the top 10     ##
+##  contributing pollutants to CR in-a-mil (based on 5 yr average)     ##
+##  distinguished by color                                             ##
+#########################################################################
 
-## Read in filtered NATTS df 
-df <- read.csv("../Data/filteredNATTS2017v3.csv")    # Change path if necessary
+## Read in filtered NATTS HAPs df 
+df <- read.csv("../Data/FilteredNattsHaps.csv")    # Change path if necessary
 
 ### Calculate the five year average cancer risk for each site-chemical 
 avgCR_chem <- df %>% group_by(LOCATION, SETTING, AQS_PARAMETER_NAME) %>%
-                        summarize("CRinAmilAvg" = mean(CRinAmil))
+                        dplyr::summarize("CRinAmilAvg" = mean(CRinAmil))
 
-### Calculate five year average cancer risk for each site 
+### Calculate five year average cancer risk for each NATTS 
 avgCR_site <- avgCR_chem %>% group_by(LOCATION, SETTING) %>%
-                         summarize("AvgCR" = sum(CRinAmilAvg))
+                         dplyr::summarize("AvgCR" = sum(CRinAmilAvg))
 
 ### Calculate the top 10 contributing chemicals to CR (based on 5 yr avg) for each site 
-### and then put all other chemicals into an "other" group
+### and combine cancer risk from all other chemicals into an "other" group
 top10chem  <- avgCR_chem %>% group_by(LOCATION) %>%
                              arrange(desc(CRinAmilAvg)) %>%
-                             mutate(AQS_PARAMETER_NAME = ifelse(1:n() > 10, "Other",
+                             dplyr::mutate(AQS_PARAMETER_NAME = ifelse(1:n() > 10, "Other",
                                                               as.character(AQS_PARAMETER_NAME))) %>%
                              group_by(AQS_PARAMETER_NAME, LOCATION, SETTING) %>%
-                             summarize("CRinAmilAvg" = sum(CRinAmilAvg))
+                             dplyr::summarize("CRinAmilAvg" = sum(CRinAmilAvg))
 
-### Pretty sure the next lines set up the order of sites for the stacked bar (so that 
-### they are presented in decreasing total CR, with urban and rural locations grouped)
+### Set up the order of sites for the stacked bar (so that they are presented in order of
+### decreasing total CR, with urban and rural locations grouped)
 avgCR_site <- aggregate(CRinAmilAvg ~ LOCATION, top10chem, sum)
 top10chem$LOCATION <- factor(top10chem$LOCATION,
                              levels=avgCR_site[order(avgCR_site$CRinAmilAvg, decreasing = TRUE),
                              "LOCATION"])
 top10chem$SETTING <- factor(top10chem$SETTING, levels = c("Urban", "Rural"))
 
-### Created stacked bar plot 
+### Create stacked bar plot 
 p <- ggplot(top10chem, aes(x = interaction(LOCATION, SETTING), y = CRinAmilAvg, width = 0.8)) +
          geom_bar(stat = "identity", aes(fill = AQS_PARAMETER_NAME)) +
          theme(axis.text.x = element_text(angle = 90,

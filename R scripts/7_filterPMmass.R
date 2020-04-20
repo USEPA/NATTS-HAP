@@ -7,35 +7,35 @@ library(dplyr)
 #   Download PM2.5 Speciation and PM10 Speciation files for 2013-2017 and   #    
 #   unzip the csvs to data folder.***    Alternatively I have included the  #
 #   filteredNATTSwPMmass.csv that this file generates under Optional Files. #
-#   If you wish to skip this script, add filteredNATTSwPMmass.csv to Data   #
-#   folder and do not run this script.                                      #
+#   If you wish to skip this script, add filteredNATTSwPMmass.csv to        #
+#   NATTS-HAP/Data and do not run this script.                              #
 # ------------------------------------------------------------------------  #
 #  This R script used the PM10 and PM2.5 mass files from  the AQS website,  #
 #  this data is provided as daily data so in this script we create annual   # 
-#  averaged of PM10 and PM2.5 mass for each NATTS for the years 2012-2017.  #
+#  averaged of PM10 and PM2.5 mass for each NATTS for the years 2013-2017.  #
 #  We use PM10 and PM2.5 mass for the correlation matrix figure so the      #
 #  output datafile of this script must be created before running the        # 
-#  correlation matrix script                                                #
+#  correlation matrix R script                                              #
 #############################################################################
 
 ##  Read in all necessary files, this takes a while since the files are large
 NATTScodes <- read.csv("../Data/NATTScodes.csv")           # Change paths if necessary
-natts <- read.csv("../Data/filteredNATTS2017v3.csv")
+natts <- read.csv("../Data/FilteredNattsHaps.csv")
 
-PM10_2017 <- read.csv("../Data/daily_PM10SPEC_2017.csv")
-PM25_2017 <- read.csv("../Data/daily_SPEC_2017.csv")
+PM10_2017 <- read.csv("../Data/daily_81102_2017.csv")
+PM25_2017 <- read.csv("../Data/daily_88101_2017.csv")
 
-PM10_2016 <- read.csv("../Data/daily_PM10SPEC_2016.csv")
-PM25_2016 <- read.csv("../Data/daily_SPEC_2016.csv")
+PM10_2016 <- read.csv("../Data/daily_81102_2016.csv")
+PM25_2016 <- read.csv("../Data/daily_88101_2016.csv")
 
-PM10_2015 <- read.csv("../Data/daily_PM10SPEC_2015.csv")
-PM25_2015 <- read.csv("../Data/daily_SPEC_2015.csv")
+PM10_2015 <- read.csv("../Data/daily_81102_2015.csv")
+PM25_2015 <- read.csv("../Data/daily_88101_2015.csv")
 
-PM10_2014 <- read.csv("../Data/daily_PM10SPEC_2014.csv")
-PM25_2014 <- read.csv("../Data/daily_SPEC_2014.csv")
+PM10_2014 <- read.csv("../Data/daily_81102_2014.csv")
+PM25_2014 <- read.csv("../Data/daily_88101_2014.csv")
 
-PM10_2013 <- read.csv("../Data/daily_PM10SPEC_2013.csv")
-PM25_2013 <- read.csv("../Data/daily_SPEC_2013.csv")
+PM10_2013 <- read.csv("../Data/daily_81102_2013.csv")
+PM25_2013 <- read.csv("../Data/daily_88101_2013.csv")
 
 ##  Function to calculate annual average of PM10 and PM2.5 mass at each NATTS for specific year
 pm_mass <- function(PM10, PM25, year) {

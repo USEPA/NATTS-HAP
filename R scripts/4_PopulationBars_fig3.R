@@ -7,15 +7,15 @@ library(reshape2); library(dplyr); library(ggplot2)
 ##############################################################################
 
 ### Read in data sets: filtered NATTS, and population values around monitors
-df <- read.csv("../Data/filteredNATTS2017v3.csv")                    # Change path if necessary
+df <- read.csv("../Data/FilteredNattsHaps.csv")                    # Change path if necessary
 pop <- read.csv("../Data/CB_within_NATTS_blockpops.csv") %>%
                 subset(select = c(LOCATION, win0.25mi, win1mi, win0.5mi))
 
 ### 5 year average CR at NATTS
 avgCR_site <- df %>% group_by(LOCATION, AQS_PARAMETER_NAME, SETTING) %>%
-                     summarize("mean" = mean(CRinAmil)) %>%
+                     dplyr::summarize("mean" = mean(CRinAmil)) %>%
                      group_by(LOCATION, SETTING) %>%
-                     summarize("CancerRisk" = sum(mean)) %>%
+                     dplyr::summarize("CancerRisk" = sum(mean)) %>%
                      subset(select = c("LOCATION", "CancerRisk", "SETTING"))
 
 ### Match population to sites to get breakdown of population and cancer risk
@@ -38,7 +38,7 @@ fig3b <- popwCR2 %>% mutate(CR_ID = ifelse(CancerRisk >= 1 & CancerRisk < 25, "x
                                   "100up")))))
 
 fig3b <- fig3b %>% group_by(variable, CR_ID) %>%
-                   summarize("pop" = sum(value))
+                   dplyr::summarize("pop" = sum(value))
 
 fig3b$CR_ID <- factor(fig3b$CR_ID, levels = c("x1.25", "x25.50", "x50.75", "x75.100", "100up"))
 fig3b$variable <- factor(fig3b$variable, levels = c("win1mi", "win0.5mi", "win0.25mi"))

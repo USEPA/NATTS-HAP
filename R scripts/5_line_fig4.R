@@ -7,15 +7,15 @@ library(rlist); library(dplyr); library(ggplot2)
 # included                                                             #
 ########################################################################
 
-### Read in data set: filtered NATTS
-df <- read.csv("../Data/filteredNATTS2017v3.csv")   # Change path if necessary
+### Read in data set: filtered NATTS HAPs
+df <- read.csv("../Data/FilteredNattsHaps.csv")   # Change path if necessary
 
-###  Only pollutants measured all five years at a given site
+###  Use only pollutants measured all five years at a given site
 complete <- df %>% group_by(LOCATION, AQS_PARAMETER_NAME) %>% filter(length(YEAR) > 4)
 d1 <- as.data.frame(unique(df$LOCATION))
 d2 <-  as.data.frame(unique(complete$LOCATION))
 y1 <- complete %>% group_by(LOCATION, YEAR) %>% 
-                   summarize("CRinAmil" = sum(CRinAmil))
+                   dplyr::summarize("CRinAmil" = sum(CRinAmil))
 y1 <- reshape2::dcast(y1, LOCATION ~ YEAR, value.var = "CRinAmil")
 
 ### Calculate standardized change in CR, using 2013 as baseline
@@ -52,7 +52,7 @@ p <- ggplot(y3, aes(x = YEAR, colour = LOCATION, group = LOCATION)) +
 
 ### Write to pdf
 pdf("../Figures/Fig4_timeSeries.pdf", paper = "USr", width = 11, height = 7)
-p
+print(p)
 dev.off()
 
 ### Data frame for graph

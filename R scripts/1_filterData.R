@@ -1,12 +1,13 @@
 library(dplyr)
 
 ###################################################################################
-##  ***Before running this script the annual average statistics xlsx must be     ##
-##     downloaded from https://www3.epa.gov/ttnamti1/toxdat.html#data (bottom of ##
-##     page) and then the annual_phase13 tab must be saved as a csv.***          ##
+##  ***Before running this script make sure you have saved annual_phase.csv      ## 
+##     to NATTS-HAP/Data. The file can be downloaded from                        ## 
+##     https://www3.epa.gov/ttnamti1/toxdat.html#data (annual average statistics ##
+##     at bottom of page), then save annual_phase13 tab as a csv.***             ##
 ##  ---------------------------------------------------------------------------- ##
-##  This R script takes in the annual HAP monitored concentrations data set and  ##
-##  first matches the AMA_SITE_CODE and AQS_PARAMATER_NAME to dataframes         ##
+##  This R script takes in the monitored annual average HAP concentrations data  ##
+##  set and first matches the AMA_SITE_CODE and AQS_PARAMATER_NAME to dataframes ##
 ##  so that only NATTS sites and chemicals with URE values are kept, we then     ##
 ##  performed other filtering methods as described below.                        ##
 ##                                                                               ##
@@ -43,12 +44,12 @@ natts$meanratio <- ifelse(natts$Percent_ND > 80, 1, natts$meanratio)
 ### Remove data where meanratio was greater than 1.3 (ND determined to have large effect on annual mean)
 natts <- natts %>% subset(meanratio <= 1.3)
 
-### For chemicals that were measured at multiple time intervals only keep 24 hour interval,
+### For chemicals that were measured at multiple time intervals only keep 24 hour interval (All our data was measured with 24 HOURS interval)
 natts$DURATION_DESC <- factor(natts$DURATION_DESC, levels = c("24 HOURS", "1 HOUR"))
 natts <- natts[order(natts$DURATION_DESC),]
 natts <- natts[!duplicated(natts[,c('YEAR', 'LOCATION', "AQS_PARAMETER_NAME")]),]
 
-### Calculate cancer risk and cancer risk in a million columns (CR = annual mean * URE)
+### Calculate cancer risk and cancer risk in a million columns (CR = annual HAP concentration * URE)
 natts$CancerRisk <- (as.numeric(as.character(natts$URE)) * as.numeric(as.character(natts$meanRos_ug_m3)))
 natts$CRinAmil <- natts$CancerRisk* 1000000    #add CR and CRinAmil
 
@@ -60,4 +61,4 @@ natts <- natts %>% group_by(LOCATION) %>%
                    subset(select = -c(MONITOR_LATITUDE, MONITOR_LONGITUDE))
 
 ### Write filtered data to new csv
-write.csv(natts, "../Data/filteredNATTS2017v3.csv", row.names = FALSE)
+write.csv(natts, "../Data/FilteredNattsHaps.csv", row.names = FALSE)

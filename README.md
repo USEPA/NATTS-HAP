@@ -19,5 +19,6 @@ By default all the figures will be created as PDFs in NATTS-HAP/Figures. However
 #### Figure 2 -- Pie Chart Map
 The script for this figure is written in Python using Jupyter notebooks, which can be accessed through Anaconda if not already installed. Some additional libraries will need to be installed via Anaconda or `pip install`. Documentation for Anaconda and installing Python libraries can be found here: 
 
-https://docs.anaconda.com/anaconda/install/ \n
+https://docs.anaconda.com/anaconda/install/
+
 https://packaging.python.org/tutorials/installing-packages/

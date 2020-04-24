@@ -15,3 +15,9 @@ Once all the necessary datasets are in NATTS-HAP/Data you can begin running the 
 
 ## Producing Figures
 By default all the figures will be created as PDFs in NATTS-HAP/Figures. However, they can also be easily viewed in R studio by printing the plot object `print(p)`. Most of the figures will not look exactly as they appear in the paper as many stylistic components of the figures (e.g. colors, fonts) were edited in Adobe Illustrator. 
+
+### Figure 2 -- Pie Chart Map
+The script for this figure is written in Python using Jupyter notebooks, which can be accessed through Anaconda if not already installed. Some additional libraries will need to be installed via Anaconda or `pip install`. Documentation for Anaconda and installing Python libraries can be found here: 
+
+https://docs.anaconda.com/anaconda/install/
+https://packaging.python.org/tutorials/installing-packages/

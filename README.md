@@ -22,3 +22,6 @@ The script for this figure is written in Python using Jupyter notebooks, which c
 https://docs.anaconda.com/anaconda/install/
 
 https://packaging.python.org/tutorials/installing-packages/
+
+#### Figure 6 -- Correlation Matrix
+The script for this figure uses the [MICE package](https://cran.r-project.org/web/packages/mice/mice.pdf) to impute data for sites that are missing some but not more than 75% of data used in the correlation matrix. This method will produce slightly different imputation values when run so the resulting correlation matrix might not look identical to the paper figure but major clusters should be the same. 

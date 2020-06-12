@@ -1,5 +1,6 @@
 # NATTS-HAP
 This repository contains the R scripts and datasets used to create all figures in the NATTS HAP paper.
+It is registered in Reusable Component Services: https://sor.epa.gov/sor_extranet/registry2/reusereg/searchandretrieve/details/general/24997
 
 ## Set Up Directory
 Copy NATTS-HAP to a local repository. The NATTS-HAP directory should contain 4 folders-- R Scripts, Data, Optional Files, and Figures (create an empty folder and it will be populated as the scripts are run). In order to run all the scripts you will first need to download some publically available datasets: 

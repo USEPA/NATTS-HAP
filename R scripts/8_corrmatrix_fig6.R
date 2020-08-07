@@ -8,10 +8,10 @@ library(mice);library(reshape2);library(ggplot2); library(dplyr)
 ##################################################################################
 
 ## Read in necessary date file -- it should be the one created by previous script, which 
-## contains filtered NATTS data and annual the PM2.5 and PM10 mass data 
-NATTSwPMmass <- read.csv("../Data/filteredNATTSwPMmass.csv")  # change path if not set to source file location
+## contains filtered NATTS data 
+NATTS <- read.csv("../Data/filteredNATTS2017v3.csv")  # change path if not set to source file location
 
-data <- NATTSwPMmass %>% group_by(LOCATION, SETTING, AQS_PARAMETER_NAME) %>%
+data <- NATTS %>% group_by(LOCATION, SETTING, AQS_PARAMETER_NAME) %>%
                              dplyr::summarize("ParamAvg" = mean(meanRos_ug_m3))
 
 urban <- subset(data, SETTING == "Urban")

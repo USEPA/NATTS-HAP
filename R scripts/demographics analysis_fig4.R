@@ -1,7 +1,5 @@
 data<-read.csv("1Mile_NATTS_demographics.csv")
 
-popdata$minority<-aggregate(data$MINORPOP, by=list(Location=data$Location), FUN=sum)
-popdata$lowincome<-aggregate(data$LOWINCOME, by=list(Location=data$Location), FUN=sum)
 popdata$minoritypct<-rbind(aggregate(data$MINORPCT, by=list(Location=data$Location), FUN=mean))
 popdata$lowincpct<-rbind(aggregate(data$LOWINCPCT, by=list(Location=data$Location), FUN=mean))
 

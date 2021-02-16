@@ -46,7 +46,7 @@ fig3b$variable <- factor(fig3b$variable, levels = c("win1mi", "win0.5mi", "win0.
 ##############################################################################################
 #  Layered bar plot showing populations in different CR ranges for different distances from  # 
 #  monitor, win0.25mi is graphed but hidden behind other elements, brought to front in       #
-#  illustrator, not sure how to do it here                                                   #
+#  illustrator                                                   #
 ##############################################################################################
 p3b <- ggplot(fig3b, aes(x = CR_ID, y = pop, fill = variable)) +
            geom_bar(stat = "identity", position = "stack") +

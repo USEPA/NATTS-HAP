@@ -1,0 +1,17 @@
+data<-read.csv("model vs monitor.csv")
+data$LOCATION<-factor(data$LOCATION,levels=c("Grand Junction, CO","Los Angeles, CA","Bountiful, UT","Detroit, MI", "Phoenix, AZ", "St. Louis, MO","Rubidoux, CA","Washington, DC", "Roxbury, MA", "Pinellas County, FL","Bronx, NY", "Houston, TX",  "San Jose, CA", "Tampa, FL",  "Richmond, VA", "Providence, RI","Chicago, IL","Portland, OR","Rochester, NY", "Seattle, WA","Atlanta, GA","Chesterfield, SC","La Grande, OR","Karnack, TX","Grayson Lake, KY","Horicon, WI","Underhill, VT"))
+
+#Fig 8
+ggplot(data,aes(LOCATION,totalCRinAmil2014,fill=CR))+
+  geom_bar(stat="identity",position = position_dodge(width = 0.8),width=0.8)+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, vjust = .25,size=16),axis.title.y = element_text(size=20),  axis.text.y = element_text(size=16),axis.line = element_line(size = 1),axis.title.x = element_text(size=20),panel.background = element_rect(fill="white"))
+dev.off()
+ggsave("barplot2014.pdf")
+
+#FigS1
+data<-read.csv("HCHO.csv")
+data$LOCATION<-factor(data$LOCATION,levels=c("Grand Junction, CO","Los Angeles, CA","Bountiful, UT","Detroit, MI", "Phoenix, AZ", "St. Louis, MO","Rubidoux, CA","Washington, DC", "Roxbury, MA", "Pinellas County, FL","Bronx, NY", "Houston, TX",  "San Jose, CA", "Tampa, FL",  "Richmond, VA", "Providence, RI","Chicago, IL","Portland, OR","Rochester, NY", "Seattle, WA","Atlanta, GA","Chesterfield, SC","La Grande, OR","Karnack, TX","Grayson Lake, KY","Horicon, WI","Underhill, VT"))
+ggplot(data,aes(x=LOCATION,y=conc,fill=type))+
+  geom_bar(stat="identity",position = position_dodge(width = 0.8),width=0.8)+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1, vjust = .25,size=16),axis.title.y = element_text(size=20),  axis.text.y = element_text(size=16),axis.line = element_line(size = 1),axis.title.x = element_text(size=20),panel.background = element_rect(fill="white"))
+ggsave("HCHO conc.pdf")

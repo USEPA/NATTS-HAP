@@ -1,0 +1,55 @@
+LOCATION,Classification,CR,totalCRinAmil2014
+"Atlanta, GA",Urban,monitor,14.475328
+"Bountiful, UT",Urban,monitor,99.28513904
+"Bronx, NY",Urban,monitor,60.65950456
+"Chesterfield, SC",Rural,monitor,52.963504
+"Chicago, IL",Urban,monitor,44.30589808
+"Detroit, MI",Urban,monitor,78.29226272
+"Grand Junction, CO",Urban,monitor,105.1633247
+"Grayson Lake, KY",Rural,monitor,34.56784016
+"Horicon, WI",Rural,monitor,24.153108
+"Houston, TX",Urban,monitor,60.65519632
+"Karnack, TX",Rural,monitor,40.8212071
+"La Grande, OR",Rural,monitor,42.5453744
+"Los Angeles, CA",Urban,monitor,101.8768942
+"Phoenix, AZ",Urban,monitor,77.79317392
+"Pinellas County, FL",Urban,monitor,63.86815712
+"Portland, OR",Urban,monitor,43.473792
+"Providence, RI",Urban,monitor,46.18098336
+"Richmond, VA",Urban,monitor,55.22160176
+"Rochester, NY",Urban,monitor,37.52168572
+"Roxbury, MA",Urban,monitor,69.16966304
+"Rubidoux, CA",Urban,monitor,71.14108432
+"San Jose, CA",Urban,monitor,59.06824224
+"Seattle, WA",Urban,monitor,30.6278692
+"St. Louis, MO",Urban,monitor,76.10364944
+"Tampa, FL",Urban,monitor,57.0022888
+"Underhill, VT",Rural,monitor,23.67494026
+"Washington, DC",Urban,monitor,69.30720832
+"Atlanta, GA",Urban,model,50
+"Bountiful, UT",Urban,model,20
+"Bronx, NY",Urban,model,40
+"Chesterfield, SC",Rural,model,30
+"Chicago, IL",Urban,model,30
+"Detroit, MI",Urban,model,30
+"Grand Junction, CO",Urban,model,20
+"Grayson Lake, KY",Rural,model,30
+"Horicon, WI",Rural,model,20
+"Houston, TX",Urban,model,80
+"Karnack, TX",Rural,model,40
+"La Grande, OR",Rural,model,20
+"Los Angeles, CA",Urban,model,50
+"Phoenix, AZ",Urban,model,50
+"Pinellas County, FL",Urban,model,30
+"Portland, OR",Urban,model,40
+"Providence, RI",Urban,model,30
+"Richmond, VA",Urban,model,30
+"Rochester, NY",Urban,model,20
+"Roxbury, MA",Urban,model,40
+"Rubidoux, CA",Urban,model,40
+"San Jose, CA",Urban,model,40
+"Seattle, WA",Urban,model,40
+"St. Louis, MO",Urban,model,50
+"Tampa, FL",Urban,model,40
+"Underhill, VT",Rural,model,20
+"Washington, DC",Urban,model,40

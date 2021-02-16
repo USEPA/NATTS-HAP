@@ -1,0 +1,82 @@
+LOCATION,type,conc
+"Atlanta, GA",NATAa,2.302725963
+"Bountiful, UT",NATAa,0.954067766
+"Bronx, NY",NATAa,1.724580615
+"Chesterfield, SC",NATAa,1.776180485
+"Chicago, IL",NATAa,1.097091647
+"Detroit, MI",NATAa,1.061727814
+"Grand Junction, CO",NATAa,1.030959496
+"Grayson Lake, KY",NATAa,1.387998734
+"Horicon, WI",NATAa,0.756404661
+"Houston, TX",NATAa,1.464099281
+"Karnack, TX",NATAa,2.121854562
+"La Grande, OR",NATAa,0.902536485
+"Los Angeles, CA",NATAa,2.048450537
+"Phoenix, AZ",NATAa,2.277674109
+"Pinellas County, FL",NATAa,1.533345986
+"Portland, OR",NATAa,1.442312608
+"Providence, RI",NATAa,1.115886712
+"Richmond, VA",NATAa,1.71607448
+"Rochester, NY",NATAa,0.887362654
+"Roxbury, MA",NATAa,1.231155301
+"Rubidoux, CA",NATAa,1.871825733
+"San Jose, CA",NATAa,1.56051847
+"Seattle, WA",NATAa,1.352273883
+"St. Louis, MO",NATAa,1.620255975
+"Tampa, FL",NATAa,1.930504652
+"Underhill, VT",NATAa,0.774959528
+"Washington, DC",NATAa,1.706929995
+"Atlanta, GA",NATAe,2.260580883
+"Bountiful, UT",NATAe,0.952349362
+"Bronx, NY",NATAe,1.629063682
+"Chesterfield, SC",NATAe,1.76997682
+"Chicago, IL",NATAe,1.092186007
+"Detroit, MI",NATAe,1.034813112
+"Grand Junction, CO",NATAe,0.986951582
+"Grayson Lake, KY",NATAe,1.406544806
+"Horicon, WI",NATAe,0.751029017
+"Houston, TX",NATAe,1.427048973
+"Karnack, TX",NATAe,2.151011568
+"La Grande, OR",NATAe,0.87262155
+"Los Angeles, CA",NATAe,1.962448797
+"Phoenix, AZ",NATAe,2.246619858
+"Pinellas County, FL",NATAe,1.527497669
+"Portland, OR",NATAe,1.385638871
+"Providence, RI",NATAe,1.089352881
+"Richmond, VA",NATAe,1.685757504
+"Rochester, NY",NATAe,0.869162694
+"Roxbury, MA",NATAe,1.189763293
+"Rubidoux, CA",NATAe,1.853685031
+"San Jose, CA",NATAe,1.486950539
+"Seattle, WA",NATAe,1.290980233
+"St. Louis, MO",NATAe,1.648109225
+"Tampa, FL",NATAe,1.874011341
+"Underhill, VT",NATAe,0.780206235
+"Washington, DC",NATAe,1.715404644
+"Atlanta, GA",NATTS,
+"Bountiful, UT",NATTS,5.28
+"Bronx, NY",NATTS,2.49
+"Chesterfield, SC",NATTS,3.1
+"Chicago, IL",NATTS,1.35
+"Detroit, MI",NATTS,3.34
+"Grand Junction, CO",NATTS,3.4
+"Grayson Lake, KY",NATTS,1.5
+"Horicon, WI",NATTS,1.45
+"Houston, TX",NATTS,1.99
+"Karnack, TX",NATTS,1.88
+"La Grande, OR",NATTS,2.22
+"Los Angeles, CA",NATTS,4.75
+"Phoenix, AZ",NATTS,3.33
+"Pinellas County, FL",NATTS,1.88
+"Portland, OR",NATTS,2.14
+"Providence, RI",NATTS,1.97
+"Richmond, VA",NATTS,2.78
+"Rochester, NY",NATTS,1.39
+"Roxbury, MA",NATTS,3.73
+"Rubidoux, CA",NATTS,3.6
+"San Jose, CA",NATTS,2.53
+"Seattle, WA",NATTS,0.62
+"St. Louis, MO",NATTS,3.5
+"Tampa, FL",NATTS,2.04
+"Underhill, VT",NATTS,1.02
+"Washington, DC",NATTS,2.96
